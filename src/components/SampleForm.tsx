@@ -1,7 +1,9 @@
 import { useForm } from "react-hook-form";
 
 const SampleForm = () => {
-    const { register, handleSubmit } = useForm();
+    const { register, handleSubmit, watch } = useForm();
+
+    const watchAllVal = watch();
 
     const submitForm = (data: any): void => {
         console.log(data);
@@ -15,7 +17,7 @@ const SampleForm = () => {
                 <input {...register('label')} />
                 <label>ラベル：</label>
                 <select {...register('select')}>
-                    <option>選択してください</option>
+                    <option defaultChecked>選択してください</option>
                     <option value='aaa'>aaa</option>
                     <option value='bbb'>bbb</option>
                     <option value='ccc'>ccc</option>
@@ -26,14 +28,23 @@ const SampleForm = () => {
                 <input type='checkbox' value='ccc' {...register('checkbox')} />ccc
 
                 <label>ラベル：</label>
-                <input type='radio' value='girl' {...register('radio')} checked />Girl
-                <input type='radio' value='boy' {...register('radio')} />Boy
+                <div radioGroup="rg">
+                    <input type='radio' value='yes' {...register('rg')} defaultChecked />YES
+                    <input type='radio' value='no' {...register('rg')} />NO
+                </div>
 
                 <label>ラベル：</label>
                 <textarea {...register('textarea')} />
 
                 <input type='submit' onClick={handleSubmit(submitForm)} />
             </form>
+            <div>
+                <p>label：{watchAllVal.label}</p>
+                <p>select：{watchAllVal.select}</p>
+                <p>checkbox：{watchAllVal.checkbox}</p>
+                <p>radio：{watchAllVal.rg}</p>
+                <p>textarea：{watchAllVal.textarea}</p>
+            </div>
         </div>
     );
 };

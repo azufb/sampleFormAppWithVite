@@ -1,11 +1,10 @@
-import SampleForm from './components/SampleForm';
-import SampleDynamicForm from './components/SampleDynamicForm';
+import Router from "./router";
+
 
 const App = () => {
   return (
     <div>
-      <SampleForm />
-      <SampleDynamicForm />
+      <Router />
     </div>
   )
 }

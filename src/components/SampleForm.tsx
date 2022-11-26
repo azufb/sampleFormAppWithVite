@@ -1,9 +1,9 @@
 import { useForm } from "react-hook-form";
 
 const SampleForm = () => {
-    const { register, handleSubmit, watch } = useForm();
+    const { register, handleSubmit, watch, formState: { errors } } = useForm();
 
-    const watchAllVal = watch();
+    const watchAllVal = watch(); // 入力欄全部を監視
 
     const submitForm = (data: any): void => {
         console.log(data);
@@ -14,7 +14,8 @@ const SampleForm = () => {
             <p>一般的なフォーム</p>
             <form>
                 <label>ラベル：</label>
-                <input {...register('label')} />
+                <input {...register('label', { pattern: /[a-zA-Z]/ })} />
+                {errors.label && <p>文字を入力してください!</p>}
                 <label>ラベル：</label>
                 <select {...register('select')}>
                     <option defaultChecked>選択してください</option>

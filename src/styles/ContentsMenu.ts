@@ -1,9 +1,14 @@
-import { styled } from '@stitches/react';
+import { styled } from './stitches.config'; // configを作成しているので、@stitches/reactからではなく、configからimport。
 
 const MenuList = styled('div', {
-    display: 'flex',
-    justifyContent: 'center',
-    columnGap: '1rem'
+    '@tablet': {
+        display: 'block'
+    },
+    '@pc': {
+        display: 'flex',
+        justifyContent: 'center',
+        columnGap: '1rem',
+    }
 });
 
 const MenuButton = styled('button', {

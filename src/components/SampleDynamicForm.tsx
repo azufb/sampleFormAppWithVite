@@ -17,16 +17,13 @@ const SampleDynamicForm = () => {
     });
     
     const onSubmit = async (data: any) => {
-        for (const task of data.sample) {
-            const param = {
-                title: task.title
-            };
-    
-            console.log(param);
-        
-            const response = await axiosClient.post('/addTask', param);
-            console.log(response);
-        }
+        const param = {
+            sample: data.sample
+        };
+
+        // 複数レコード一気に登録
+        const response = await axiosClient.post('/addTasks', param);
+        console.log(response);
 
         // フォームを空にする。
         reset();

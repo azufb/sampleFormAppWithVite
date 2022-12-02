@@ -14,6 +14,11 @@ const ContentsMenu = () => {
                     <Link to='dynamicForm'>動的フォーム</Link>
                 </MenuButton>
             </div>
+            <div>
+                <MenuButton>
+                    <Link to='list'>リスト</Link>
+                </MenuButton>
+            </div>
         </MenuList>
     );
 };

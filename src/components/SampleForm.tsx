@@ -1,12 +1,19 @@
 import { useForm } from "react-hook-form";
+import axiosClient from "../axios";
 
 const SampleForm = () => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
 
     const watchAllVal = watch(); // 入力欄全部を監視
 
-    const submitForm = (data: any): void => {
-        console.log(data);
+    const submitForm = async (data: any) => {
+        const param = {
+            title: data.label
+        };
+
+        const response = await axiosClient.post('/addTask', param);
+
+        console.log(response);
     };
 
     return (
@@ -14,7 +21,7 @@ const SampleForm = () => {
             <p>一般的なフォーム</p>
             <form>
                 <label>ラベル：</label>
-                <input {...register('label', { pattern: /a-zA-Z/ })} />
+                <input {...register('label', { pattern: /[A-Za-z]/ })} />
                 {errors.label && <span>文字を入力してください！</span>}
 
                 <label>ラベル：</label>
@@ -38,7 +45,7 @@ const SampleForm = () => {
                 </div>
 
                 <label>ラベル：</label>
-                <textarea {...register('textarea', { pattern: /a-zA-Z/ })} />
+                <textarea {...register('textarea', { pattern: /[A-Za-z]/ })} />
                 {errors.textarea && <span>文字を入力してください！</span>}
 
                 <input type='submit' onClick={handleSubmit(submitForm)} />

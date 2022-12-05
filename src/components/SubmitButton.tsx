@@ -1,8 +1,10 @@
+import { SubmitBtn } from "../styles/SubmitButton";
+
 const SubmitButton = (props: any) => {
     return (
-        <button type='submit' onClick={props.onClick}>
+        <SubmitBtn type='submit' onClick={props.onClick}>
             {props.text}
-        </button>
+        </SubmitBtn>
     );
 };
 

@@ -11,10 +11,20 @@ const MenuList = styled('div', {
     }
 });
 
+const MenuButtonWrapDiv = styled('div', {
+    '@tablet': {
+        marginBottom: '1rem'
+    },
+    '@pc': {
+        marginBottom: '0'
+    }
+});
+
 const MenuButton = styled('button', {
+    padding: '0.5rem 1rem',
     border: '2px solid #OOOOOO',
     borderRadius: '20px',
-    backgroundColor: 'red',
+    backgroundColor: '#636DFF',
     color: '#FFFFFF',
     '& a': {
         textDecoration: 'none'
@@ -26,5 +36,6 @@ const MenuButton = styled('button', {
 
 export {
     MenuList,
+    MenuButtonWrapDiv,
     MenuButton
 }

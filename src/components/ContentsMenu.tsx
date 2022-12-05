@@ -1,24 +1,24 @@
 import { Link } from "react-router-dom";
-import { MenuList, MenuButton } from '../styles/ContentsMenu';
+import { MenuList, MenuButtonWrapDiv, MenuButton } from '../styles/ContentsMenu';
 
 const ContentsMenu = () => {
     return (
         <MenuList>
-            <div>
+            <MenuButtonWrapDiv>
                 <MenuButton>
                     <Link to='form'>基本のフォーム</Link>
                 </MenuButton>
-            </div>
-            <div>
+            </MenuButtonWrapDiv>
+            <MenuButtonWrapDiv>
                 <MenuButton>
                     <Link to='dynamicForm'>動的フォーム</Link>
                 </MenuButton>
-            </div>
-            <div>
+            </MenuButtonWrapDiv>
+            <MenuButtonWrapDiv>
                 <MenuButton>
                     <Link to='list'>タスク一覧</Link>
                 </MenuButton>
-            </div>
+            </MenuButtonWrapDiv>
         </MenuList>
     );
 };

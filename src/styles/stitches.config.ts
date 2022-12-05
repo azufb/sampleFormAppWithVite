@@ -6,5 +6,13 @@ export const { styled, css } = createStitches({
         phone: '(min-width: 576px)',
         tablet: '(min-width: 768px)',
         pc: '(min-width: 992px)',
+    },
+    theme: {
+        colors: {
+            background: '#2F2F2F',
+            menuButton: '#636DFF',
+            color1: '#000000',
+            color: '#FFFFFF'
+        }
     }
 });

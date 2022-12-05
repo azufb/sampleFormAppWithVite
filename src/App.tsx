@@ -1,11 +1,11 @@
 import Router from "./Router";
-
+import { AppWrapDiv } from "./styles/App";
 
 const App = () => {
   return (
-    <div>
+    <AppWrapDiv>
       <Router />
-    </div>
+    </AppWrapDiv>
   )
 }
 

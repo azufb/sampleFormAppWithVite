@@ -2,6 +2,9 @@ import { useForm, useFieldArray } from "react-hook-form";
 import axiosClient from "../axios";
 import SubmitButton from "./SubmitButton";
 import { Title, Form, FormLabel } from "../styles/SampleDynamicForm";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCircleXmark, faPlus } from "@fortawesome/free-solid-svg-icons";
+import '../styles/css/fontAwesomeStyle.css';
 
 const SampleDynamicForm = () => {
     const { register, handleSubmit, control, reset } = useForm({
@@ -35,17 +38,23 @@ const SampleDynamicForm = () => {
         <div>
             <Title>動的フォーム</Title>
             <Form>
-                <button type="button" onClick={() => prepend({title: ''})}>先頭に追加</button>
+                <button type="button" onClick={() => prepend({title: ''})}>
+                    <FontAwesomeIcon icon={faPlus} />先頭に追加
+                </button>
                     {fields.map((field: any, index: number) => (
                         <div key={field.id}>
                             <FormLabel>タスクNo.{index}：</FormLabel>
                             <input {...register(`sample.${index}.title`)} />
-                            <button type="button" onClick={() => remove(index)}>消去</button>
+                            <FontAwesomeIcon icon={faCircleXmark} className='removeFormIcon' onClick={() => remove(index)} />
                         </div>
                     ))}
-                <button type="button" onClick={() => append({title: ''})}>後ろに追加</button>
+                <button type="button" onClick={() => append({title: ''})}>
+                    <FontAwesomeIcon icon={faPlus} />後ろに追加
+                </button>
 
-                <SubmitButton onClick={handleSubmit(onSubmit)} text='登録' />
+                <div>
+                    <SubmitButton onClick={handleSubmit(onSubmit)} text='登録' />
+                </div>
             </Form>
         </div>
     );

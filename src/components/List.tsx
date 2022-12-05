@@ -1,5 +1,7 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
 import axiosClient from "../axios";
+import { faTrashCan } from "@fortawesome/free-regular-svg-icons";
 
 const List = () => {
     const [list, setList] = useState<any[]>([]);
@@ -39,7 +41,7 @@ const List = () => {
                     {list.map((li: any, index: number) => (
                         <div key={index}>
                             <li key={index}>{li.title}</li>
-                            <button onClick={() => deleteRecord(li.id)}>削除</button>
+                            <FontAwesomeIcon icon={faTrashCan} onClick={() => deleteRecord(li.id)} />
                         </div>
                     ))}
                 </ul>

@@ -18,11 +18,11 @@ const SampleForm = () => {
 
     return (
         <div>
-            <p>一般的なフォーム</p>
+            <p>基本のフォーム</p>
             <form>
                 <label>タスク：</label>
                 <input {...register('title')} />
-                <button type="submit" onClick={handleSubmit(submitForm)}>SUBMIT</button>
+                <button type="submit" onClick={handleSubmit(submitForm)}>登録</button>
             </form>
             {/*
                 <form>

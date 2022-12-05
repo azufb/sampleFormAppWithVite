@@ -4,7 +4,7 @@ import { Title } from "../styles/Home";
 const Home = () => {
     return (
         <div>
-            <Title>Home</Title>
+            <Title>サンプルタスクリストアプリ</Title>
             <ContentsMenu />
         </div>
     );

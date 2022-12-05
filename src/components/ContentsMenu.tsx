@@ -6,7 +6,7 @@ const ContentsMenu = () => {
         <MenuList>
             <div>
                 <MenuButton>
-                    <Link to='form'>基本編</Link>
+                    <Link to='form'>基本のフォーム</Link>
                 </MenuButton>
             </div>
             <div>
@@ -16,7 +16,7 @@ const ContentsMenu = () => {
             </div>
             <div>
                 <MenuButton>
-                    <Link to='list'>リスト</Link>
+                    <Link to='list'>タスク一覧</Link>
                 </MenuButton>
             </div>
         </MenuList>

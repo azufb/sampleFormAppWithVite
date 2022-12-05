@@ -31,6 +31,7 @@ const SampleDynamicForm = () => {
 
     return (
         <div>
+            <p>動的フォーム</p>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <button type="button" onClick={() => prepend({title: ''})}>先頭に追加</button>
                     {fields.map((field: any, index: number) => (
@@ -42,7 +43,7 @@ const SampleDynamicForm = () => {
                     ))}
                 <button type="button" onClick={() => append({title: ''})}>後ろに追加</button>
 
-                <button type="submit">SUBMIT</button>
+                <button type="submit">登録</button>
             </form>
         </div>
     );

@@ -22,10 +22,9 @@ const MenuButtonWrapDiv = styled('div', {
 
 const MenuButton = styled('button', {
     padding: '0.5rem 1rem',
-    border: '2px solid #OOOOOO',
     borderRadius: '20px',
-    backgroundColor: '#636DFF',
-    color: '#FFFFFF',
+    backgroundColor: '$menuButtonBG',
+    color: '$colorWhite',
     '& a': {
         textDecoration: 'none'
     },

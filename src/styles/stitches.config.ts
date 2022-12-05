@@ -9,10 +9,9 @@ export const { styled, css } = createStitches({
     },
     theme: {
         colors: {
-            background: '#2F2F2F',
-            menuButton: '#636DFF',
-            color1: '#000000',
-            color: '#FFFFFF'
+            menuButtonBG: '#636DFF',
+            fontColorDefault: '#2F2F2F',
+            colorWhite: '#FFFFFF'
         }
     }
 });

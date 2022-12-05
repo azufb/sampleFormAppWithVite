@@ -32,14 +32,18 @@ const List = () => {
 
     return (
         <div>
-            <ul>
-                {list.map((li: any, index: number) => (
-                    <div key={index}>
-                        <li key={index}>{li.title}</li>
-                        <button onClick={() => deleteRecord(li.id)}>削除</button>
-                    </div>
-                ))}
-            </ul>
+            {list.length === 0 ? (
+                <p>登録されているタスクは0件です。</p>
+            ) : (
+                <ul>
+                    {list.map((li: any, index: number) => (
+                        <div key={index}>
+                            <li key={index}>{li.title}</li>
+                            <button onClick={() => deleteRecord(li.id)}>削除</button>
+                        </div>
+                    ))}
+                </ul>
+            )}
         </div>
     );
 };

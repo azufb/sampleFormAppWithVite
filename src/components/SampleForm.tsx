@@ -8,7 +8,7 @@ const SampleForm = () => {
 
     const submitForm = async (data: any) => {
         const param = {
-            title: data.label
+            title: data.title
         };
 
         const response = await axiosClient.post('/addTask', param);
@@ -21,7 +21,7 @@ const SampleForm = () => {
             <p>一般的なフォーム</p>
             <form>
                 <label>ラベル：</label>
-                <input {...register('label', { pattern: /[A-Za-z]/ })} />
+                <input {...register('title', { pattern: /[A-Za-z]/ })} />
                 {errors.label && <span>文字を入力してください！</span>}
 
                 <label>ラベル：</label>

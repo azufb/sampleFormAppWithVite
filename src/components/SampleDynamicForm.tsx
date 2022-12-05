@@ -1,5 +1,6 @@
 import { useForm, useFieldArray } from "react-hook-form";
 import axiosClient from "../axios";
+import SubmitButton from "./SubmitButton";
 
 const SampleDynamicForm = () => {
     const { register, handleSubmit, control, reset } = useForm({
@@ -32,7 +33,7 @@ const SampleDynamicForm = () => {
     return (
         <div>
             <p>動的フォーム</p>
-            <form onSubmit={handleSubmit(onSubmit)}>
+            <form>
                 <button type="button" onClick={() => prepend({title: ''})}>先頭に追加</button>
                     {fields.map((field: any, index: number) => (
                         <div key={field.id}>
@@ -43,7 +44,7 @@ const SampleDynamicForm = () => {
                     ))}
                 <button type="button" onClick={() => append({title: ''})}>後ろに追加</button>
 
-                <button type="submit">登録</button>
+                <SubmitButton onClick={handleSubmit(onSubmit)} text='登録' />
             </form>
         </div>
     );

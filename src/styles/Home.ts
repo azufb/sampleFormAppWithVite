@@ -1,7 +1,7 @@
 import { styled } from './stitches.config';
 
 const Title = styled('h1', {
-    margin: '0',
+    margin: '2.5rem 0',
     '@tablet': {
         textAlign: 'left'
     },

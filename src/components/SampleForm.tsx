@@ -1,5 +1,7 @@
 import { useForm } from "react-hook-form";
 import axiosClient from "../axios";
+import { Title, Form, FormLabel } from '../styles/SampleForm';
+import SubmitButton from "./SubmitButton";
 
 const SampleForm = () => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
@@ -18,12 +20,12 @@ const SampleForm = () => {
 
     return (
         <div>
-            <p>基本のフォーム</p>
-            <form>
-                <label>タスク：</label>
+            <Title>基本のフォーム</Title>
+            <Form>
+                <FormLabel>タスク：</FormLabel>
                 <input {...register('title')} />
-                <button type="submit" onClick={handleSubmit(submitForm)}>登録</button>
-            </form>
+                <SubmitButton onClick={handleSubmit(submitForm)} text='登録' />
+            </Form>
             {/*
                 <form>
                     <label>ラベル：</label>

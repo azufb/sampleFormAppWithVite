@@ -2,6 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
 import axiosClient from "../axios";
 import { faTrashCan } from "@fortawesome/free-regular-svg-icons";
+import { Title, AlternativeText, ListArea } from "../styles/List";
 
 const List = () => {
     const [list, setList] = useState<any[]>([]);
@@ -34,18 +35,23 @@ const List = () => {
 
     return (
         <div>
-            {list.length === 0 ? (
-                <p>登録されているタスクは0件です。</p>
-            ) : (
-                <ul>
-                    {list.map((li: any, index: number) => (
-                        <div key={index}>
-                            <li key={index}>{li.title}</li>
-                            <FontAwesomeIcon icon={faTrashCan} onClick={() => deleteRecord(li.id)} />
-                        </div>
-                    ))}
-                </ul>
-            )}
+            <Title>一覧</Title>
+            <ListArea>
+                {list.length === 0 ? (
+                    <AlternativeText>登録されているタスクは0件です。</AlternativeText>
+                ) : (
+                        <ul>
+                            {list.map((li: any, index: number) => (
+                                <div key={index}>
+                                    <li key={index}>
+                                        {li.title}
+                                        <FontAwesomeIcon icon={faTrashCan} onClick={() => deleteRecord(li.id)} />
+                                    </li>
+                                </div>
+                            ))}
+                        </ul>
+                )}
+            </ListArea>
         </div>
     );
 };

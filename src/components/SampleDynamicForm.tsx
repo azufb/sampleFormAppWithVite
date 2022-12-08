@@ -1,7 +1,7 @@
 import { useForm, useFieldArray } from "react-hook-form";
 import axiosClient from "../axios";
 import SubmitButton from "./SubmitButton";
-import { FormArea,Title, Form, FormLabel, Input } from "../styles/SampleDynamicForm";
+import { FormArea,Title, Form, PrependBtn, EachFormArea, FormLabel, InputArea, Input, AppendBtn } from "../styles/SampleDynamicForm";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleXmark, faPlus } from "@fortawesome/free-solid-svg-icons";
 import '../styles/css/fontAwesomeStyle.css';
@@ -38,19 +38,21 @@ const SampleDynamicForm = () => {
         <FormArea>
             <Title>動的フォーム</Title>
             <Form>
-                <button type="button" onClick={() => prepend({title: ''})}>
+                <PrependBtn type="button" onClick={() => prepend({title: ''})}>
                     <FontAwesomeIcon icon={faPlus} />先頭に追加
-                </button>
+                </PrependBtn>
                     {fields.map((field: any, index: number) => (
-                        <div key={field.id}>
+                        <EachFormArea key={field.id}>
                             <FormLabel>タスクNo.{index}：</FormLabel>
-                            <Input {...register(`sample.${index}.title`)} placeholder='ここにタスク名を入力してください' />
-                            <FontAwesomeIcon icon={faCircleXmark} className='removeFormIcon' onClick={() => remove(index)} />
-                        </div>
+                            <InputArea>
+                                <Input {...register(`sample.${index}.title`)} placeholder='ここにタスク名を入力してください' />
+                                <FontAwesomeIcon icon={faCircleXmark} className='removeFormIcon' onClick={() => remove(index)} />
+                            </InputArea>
+                        </EachFormArea>
                     ))}
-                <button type="button" onClick={() => append({title: ''})}>
+                <AppendBtn type="button" onClick={() => append({title: ''})}>
                     <FontAwesomeIcon icon={faPlus} />後ろに追加
-                </button>
+                </AppendBtn>
 
                 <div>
                     <SubmitButton onClick={handleSubmit(onSubmit)} text='登録' />

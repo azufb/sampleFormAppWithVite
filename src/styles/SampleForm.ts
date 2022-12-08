@@ -10,6 +10,7 @@ const FormArea = styled('div', {
 });
 
 const Title = styled('h1', {
+    margin: '2.5rem 0',
     color: '$fontColorDefault',
     '@tablet': {
         textAlign: 'left'

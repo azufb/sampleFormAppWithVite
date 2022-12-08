@@ -10,6 +10,7 @@ const FormArea = styled('div', {
 });
 
 const Title = styled('h1', {
+    margin: '2.5rem 0',
     color: '$fontColorDefault',
     '@tablet': {
         textAlign: 'left'
@@ -28,6 +29,14 @@ const Form = styled('form', {
     }
 });
 
+const PrependBtn = styled('button', {
+    marginBottom: '1rem'
+});
+
+const EachFormArea = styled('div', {
+    marginBottom: '1rem'
+});
+
 const FormLabel = styled('p', {
     color: '$fontColorDefault',
     fontWeight: 'bold',
@@ -35,16 +44,29 @@ const FormLabel = styled('p', {
     margin: '0'
 });
 
+const InputArea = styled('div', {
+    display: 'flex',
+    alignItems: 'center'
+});
+
 const Input = styled('input', {
     width: '100%',
     boxSizing: 'border-box',
-    marginBottom: '1.5rem'
+    marginRight: '0.5rem'
+});
+
+const AppendBtn = styled('button', {
+    marginBottom: '1rem'
 });
 
 export {
     FormArea,
     Title,
     Form,
+    PrependBtn,
+    EachFormArea,
     FormLabel,
-    Input
+    InputArea,
+    Input,
+    AppendBtn
 };

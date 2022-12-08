@@ -10,6 +10,7 @@ export const { styled, css } = createStitches({
     theme: {
         colors: {
             menuButtonBG: '#636DFF',
+            submitButtonBG: '#0f83fd',
             fontColorDefault: '#2F2F2F',
             colorWhite: '#FFFFFF'
         }

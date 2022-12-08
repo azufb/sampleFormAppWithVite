@@ -4,7 +4,7 @@ import { Title, Form, FormLabel } from '../styles/SampleForm';
 import SubmitButton from "./SubmitButton";
 
 const SampleForm = () => {
-    const { register, handleSubmit, watch, formState: { errors } } = useForm();
+    const { register, handleSubmit, watch, reset, formState: { errors } } = useForm();
 
     const watchAllVal = watch(); // 入力欄全部を監視
 
@@ -16,6 +16,9 @@ const SampleForm = () => {
         const response = await axiosClient.post('/addTask', param);
 
         console.log(response);
+
+        // フォームを空にする。
+        reset();
     };
 
     return (

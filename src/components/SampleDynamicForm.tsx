@@ -1,7 +1,7 @@
 import { useForm, useFieldArray } from "react-hook-form";
 import axiosClient from "../axios";
 import SubmitButton from "./SubmitButton";
-import { Title, Form, FormLabel } from "../styles/SampleDynamicForm";
+import { FormArea,Title, Form, FormLabel, Input } from "../styles/SampleDynamicForm";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleXmark, faPlus } from "@fortawesome/free-solid-svg-icons";
 import '../styles/css/fontAwesomeStyle.css';
@@ -35,7 +35,7 @@ const SampleDynamicForm = () => {
     };
 
     return (
-        <div>
+        <FormArea>
             <Title>動的フォーム</Title>
             <Form>
                 <button type="button" onClick={() => prepend({title: ''})}>
@@ -44,7 +44,7 @@ const SampleDynamicForm = () => {
                     {fields.map((field: any, index: number) => (
                         <div key={field.id}>
                             <FormLabel>タスクNo.{index}：</FormLabel>
-                            <input {...register(`sample.${index}.title`)} />
+                            <Input {...register(`sample.${index}.title`)} placeholder='ここにタスク名を入力してください' />
                             <FontAwesomeIcon icon={faCircleXmark} className='removeFormIcon' onClick={() => remove(index)} />
                         </div>
                     ))}
@@ -56,7 +56,7 @@ const SampleDynamicForm = () => {
                     <SubmitButton onClick={handleSubmit(onSubmit)} text='登録' />
                 </div>
             </Form>
-        </div>
+        </FormArea>
     );
 };
 

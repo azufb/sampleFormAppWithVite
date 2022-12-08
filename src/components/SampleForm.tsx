@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form";
 import axiosClient from "../axios";
-import { Title, Form, FormLabel } from '../styles/SampleForm';
+import { FormArea,Title, Form, FormLabel, Input } from '../styles/SampleForm';
 import SubmitButton from "./SubmitButton";
 
 const SampleForm = () => {
@@ -22,11 +22,11 @@ const SampleForm = () => {
     };
 
     return (
-        <div>
+        <FormArea>
             <Title>基本のフォーム</Title>
             <Form>
                 <FormLabel>タスク：</FormLabel>
-                <input {...register('title')} />
+                <Input {...register('title')} placeholder='ここにタスク名を入力してください' />
                 <SubmitButton onClick={handleSubmit(submitForm)} text='登録' />
             </Form>
             {/*
@@ -69,7 +69,7 @@ const SampleForm = () => {
                     <p>textarea：{watchAllVal.textarea}</p>
                 </div>
             */}
-        </div>
+        </FormArea>
     );
 };
 

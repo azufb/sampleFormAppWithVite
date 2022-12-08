@@ -56,7 +56,13 @@ const Input = styled('input', {
 });
 
 const AppendBtn = styled('button', {
-    marginBottom: '1rem'
+    marginBottom: '2rem'
+});
+
+const ButtonsArea = styled('div', {
+    display: 'flex',
+    justifyContent: 'center',
+    columnGap: '1rem'
 });
 
 export {
@@ -68,5 +74,6 @@ export {
     FormLabel,
     InputArea,
     Input,
-    AppendBtn
+    AppendBtn,
+    ButtonsArea
 };

@@ -1,11 +1,12 @@
 import { useForm, useFieldArray } from "react-hook-form";
 import axiosClient from "../axios";
 import SubmitButton from "./SubmitButton";
-import { FormArea,Title, Form, PrependBtn, EachFormArea, FormLabel, InputArea, Input, AppendBtn } from "../styles/SampleDynamicForm";
+import { FormArea,Title, Form, PrependBtn, EachFormArea, FormLabel, InputArea, Input, AppendBtn, ButtonsArea } from "../styles/SampleDynamicForm";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleXmark, faPlus } from "@fortawesome/free-solid-svg-icons";
 import '../styles/css/fontAwesomeStyle.css';
 import { AxiosResponse } from "axios";
+import BackToHomeButton from "./BackToHomeButton";
 
 type AddTasksParamType = {
     sample: string;
@@ -59,9 +60,10 @@ const SampleDynamicForm = () => {
                     <FontAwesomeIcon icon={faPlus} />後ろに追加
                 </AppendBtn>
 
-                <div>
+                <ButtonsArea>
+                    <BackToHomeButton />
                     <SubmitButton onClick={handleSubmit(onSubmit)} text='登録' />
-                </div>
+                </ButtonsArea>
             </Form>
         </FormArea>
     );

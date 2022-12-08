@@ -39,7 +39,13 @@ const FormLabel = styled('p', {
 const Input = styled('input', {
     width: '100%',
     boxSizing: 'border-box',
-    marginBottom: '1.5rem'
+    marginBottom: '2rem'
+});
+
+const ButtonsArea = styled('div', {
+    display: 'flex',
+    justifyContent: 'center',
+    columnGap: '1rem'
 });
 
 export {
@@ -47,5 +53,6 @@ export {
     Title,
     Form,
     FormLabel,
-    Input
+    Input,
+    ButtonsArea
 };

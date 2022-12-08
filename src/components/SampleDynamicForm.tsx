@@ -5,6 +5,11 @@ import { FormArea,Title, Form, PrependBtn, EachFormArea, FormLabel, InputArea, I
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleXmark, faPlus } from "@fortawesome/free-solid-svg-icons";
 import '../styles/css/fontAwesomeStyle.css';
+import { AxiosResponse } from "axios";
+
+type AddTasksParamType = {
+    sample: string;
+};
 
 const SampleDynamicForm = () => {
     const { register, handleSubmit, control, reset } = useForm({
@@ -21,13 +26,13 @@ const SampleDynamicForm = () => {
         name: 'sample'
     });
     
-    const onSubmit = async (data: any) => {
-        const param = {
+    const onSubmit = async (data: any): Promise<void> => {
+        const param: AddTasksParamType = {
             sample: data.sample
         };
 
         // 複数レコード一気に登録
-        const response = await axiosClient.post('/addTasks', param);
+        const response: AxiosResponse<any> = await axiosClient.post('/addTasks', param);
         console.log(response);
 
         // フォームを空にする。

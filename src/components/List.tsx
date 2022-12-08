@@ -3,13 +3,18 @@ import { useEffect, useState } from "react";
 import axiosClient from "../axios";
 import { faTrashCan } from "@fortawesome/free-regular-svg-icons";
 import { Title, AlternativeText, ListArea } from "../styles/List";
+import { AxiosResponse } from "axios";
+
+type DeleteRecordParamType = {
+    id: number;
+};
 
 const List = () => {
     const [list, setList] = useState<any[]>([]);
 
     useEffect(() => {
-        const getListFunc = async () => {
-            const response = await axiosClient.get('/getTasks');
+        const getListFunc = async (): Promise<void> => {
+            const response: AxiosResponse<any> = await axiosClient.get('/getTasks');
             console.log(response);
 
             setList(response.data);
@@ -18,15 +23,15 @@ const List = () => {
         getListFunc();
     }, []);
 
-    const deleteRecord = async (targetId: number) => {
-        const param = {
+    const deleteRecord = async (targetId: number): Promise<void> => {
+        const param: DeleteRecordParamType = {
             id: targetId
         }
-        const response = await axiosClient.post('/deleteTask', param);
+        const response: AxiosResponse<any> = await axiosClient.post('/deleteTask', param);
         console.log(response);
         
         if (response.status === 200) {
-            const getDataResponse = await axiosClient.get('/getTasks');
+            const getDataResponse: AxiosResponse<any> = await axiosClient.get('/getTasks');
             console.log(getDataResponse);
 
             setList(getDataResponse.data);

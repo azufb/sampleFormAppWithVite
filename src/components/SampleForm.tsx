@@ -1,19 +1,24 @@
+import { AxiosResponse } from "axios";
 import { useForm } from "react-hook-form";
 import axiosClient from "../axios";
 import { FormArea,Title, Form, FormLabel, Input } from '../styles/SampleForm';
 import SubmitButton from "./SubmitButton";
+
+type AddTaskParamType = {
+    title: string;
+};
 
 const SampleForm = () => {
     const { register, handleSubmit, watch, reset, formState: { errors } } = useForm();
 
     const watchAllVal = watch(); // 入力欄全部を監視
 
-    const submitForm = async (data: any) => {
-        const param = {
+    const submitForm = async (data: any): Promise<void> => {
+        const param: AddTaskParamType = {
             title: data.title
         };
 
-        const response = await axiosClient.post('/addTask', param);
+        const response: AxiosResponse<any> = await axiosClient.post('/addTask', param);
 
         console.log(response);
 

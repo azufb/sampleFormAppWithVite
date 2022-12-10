@@ -78,6 +78,7 @@ const SampleForm = () => {
                     <p>textarea：{watchAllVal.textarea}</p>
                 </div>
             */}
+            <p>タスク：{watchAllVal.title}</p>
         </FormArea>
     );
 };

@@ -26,8 +26,8 @@ const MenuButton = styled('button', {
   padding: '0.5rem 1rem',
   borderRadius: '15px',
   backgroundColor: '$menuButtonBG',
-  color: '$colorWhite',
   '& a': {
+    color: '$colorWhite',
     textDecoration: 'none',
   },
   '& a:visited': {

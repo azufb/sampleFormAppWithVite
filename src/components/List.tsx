@@ -17,7 +17,7 @@ type DeleteRecordParamType = {
   id: number;
 };
 
-const List = () => {
+const List = (): JSX.Element => {
   const [list, setList] = useState<any[]>([]);
 
   useEffect(() => {

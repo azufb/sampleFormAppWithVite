@@ -18,7 +18,7 @@ type AddTaskParamType = {
   title: string;
 };
 
-const SampleForm = () => {
+const SampleForm = (): JSX.Element => {
   const { register, handleSubmit, reset } = useForm();
   const [isSubmitSuccess, setIsSubmitSuccess] = useState<boolean>(false);
 

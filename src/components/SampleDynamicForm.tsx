@@ -25,7 +25,7 @@ type AddTasksParamType = {
   sample: string;
 };
 
-const SampleDynamicForm = () => {
+const SampleDynamicForm = (): JSX.Element => {
   const { register, handleSubmit, control, reset } = useForm({
     defaultValues: {
       sample: [

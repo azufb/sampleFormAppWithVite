@@ -35,7 +35,7 @@ const SampleDynamicForm = () => {
       ],
     },
   });
-  const { fields, prepend, append, remove, replace, swap } = useFieldArray({
+  const { fields, prepend, append, remove } = useFieldArray({
     control,
     name: 'sample',
   });

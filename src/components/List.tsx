@@ -23,7 +23,6 @@ const List = () => {
   useEffect(() => {
     const getListFunc = async (): Promise<void> => {
       const response: AxiosResponse<any> = await axiosClient.get('/getTasks');
-      console.log(response);
 
       setList(response.data);
     };
@@ -39,13 +38,11 @@ const List = () => {
       '/deleteTask',
       param
     );
-    console.log(response);
 
     if (response.status === 200) {
       const getDataResponse: AxiosResponse<any> = await axiosClient.get(
         '/getTasks'
       );
-      console.log(getDataResponse);
 
       setList(getDataResponse.data);
     }
